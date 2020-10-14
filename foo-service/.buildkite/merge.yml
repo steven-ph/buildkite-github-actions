@@ -1,0 +1,3 @@
+steps:
+  - label: "Foo service merge"
+    command: "foo-service/bin/deploy"

@@ -1,0 +1,14 @@
+steps:
+  - label: "Triggering pull request pipeline"
+    plugins:
+      chronotc/monorepo-diff#v1.2.0:
+        diff: ".buildkite/scripts/diff.sh ${BUILDKITE_COMMIT}"
+        wait: false
+        watch:
+          - path: "foo-service"
+            config:
+              trigger: "foo-service-pull-request"
+          - path: "bar-service"
+            config:
+              trigger: "bar-service-pull-request"
+
